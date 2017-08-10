@@ -18,5 +18,14 @@ namespace EmployeeService
             ResponseFormat =WebMessageFormat.Json,
             BodyStyle =WebMessageBodyStyle.Wrapped)]
         string getEmpsalary(string Empid);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET", UriTemplate = "/json2",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.Wrapped)]
+        string date();
+
     }
 }
