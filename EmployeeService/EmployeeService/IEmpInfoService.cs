@@ -13,7 +13,7 @@ namespace EmployeeService
     public interface IEmpInfoService
     {
         [OperationContract]
-        [WebInvoke(Method ="GET",UriTemplate = "/json/{Empid}",
+        [WebInvoke(Method ="GET",UriTemplate = "/json/{Empid}",//old
             RequestFormat =WebMessageFormat.Json,
             ResponseFormat =WebMessageFormat.Json,
             BodyStyle =WebMessageBodyStyle.Wrapped)]
