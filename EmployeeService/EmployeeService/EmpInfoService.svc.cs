@@ -11,14 +11,15 @@ namespace EmployeeService
     // NOTE: In order to launch WCF Test Client for testing this service, please select EmpInfoService.svc or EmpInfoService.svc.cs at the Solution Explorer and start debugging.
     public class EmpInfoService : IEmpInfoService
     {
+        EmployeeEntities context = new EmployeeEntities();
         public string date()
         {
             return (DateTime.Now.ToString());
         }
 
-        public string getEmpsalary(string Empid)
-        {
-            return "Salary of " + Empid + " is: " + 4000;
+        public Employee getemp(string getid) {
+
+            return context.Employee.Find(getid);
         }
     }
 }

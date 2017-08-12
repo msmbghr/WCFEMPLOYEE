@@ -13,19 +13,10 @@ namespace EmployeeService
     public interface IEmpInfoService
     {
         [OperationContract]
-        [WebInvoke(Method ="GET",UriTemplate = "/json/{Empid}",//old
-            RequestFormat =WebMessageFormat.Json,
-            ResponseFormat =WebMessageFormat.Json,
-            BodyStyle =WebMessageBodyStyle.Wrapped)]
-        string getEmpsalary(string Empid);
-
-
-        [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "/json2",
-           RequestFormat = WebMessageFormat.Json,
-           ResponseFormat = WebMessageFormat.Json,
-           BodyStyle = WebMessageBodyStyle.Wrapped)]
+        [WebInvoke(Method = "GET", UriTemplate = "/json",RequestFormat = WebMessageFormat.Json,ResponseFormat = WebMessageFormat.Json,BodyStyle = WebMessageBodyStyle.Wrapped)]
         string date();
 
+        [WebInvoke(Method = "GET", UriTemplate = "/get/{getid}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
+        Employee getemp(string getid);
     }
 }
