@@ -17,8 +17,5 @@ namespace EmployeeService
         public int EmployeeNo { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeEmail { get; set; }
-        public string Department { get; set; }
-        public string EmployeeManagerName { get; set; }
-        public string EmployeeManagerEmail { get; set; }
     }
 }

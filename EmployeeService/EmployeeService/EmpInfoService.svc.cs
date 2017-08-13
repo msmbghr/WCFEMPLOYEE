@@ -21,5 +21,15 @@ namespace EmployeeService
 
             return context.Employee.Find(getid);
         }
+
+        public void insetemp(int id,string name,string email)
+        {
+            Employee emp = new Employee();
+            emp.EmployeeNo=id ;
+            emp.EmployeeName =name;
+            emp.EmployeeEmail=email;
+            context.SaveChanges();
+            return emp;
+        }
     }
 }

@@ -4,9 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Employee.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeNo" />
@@ -14,24 +12,11 @@ warning 6002: The table/view 'Employee.dbo.Employee' does not have a primary key
           <Property Name="EmployeeNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EmployeeName" Type="nvarchar" MaxLength="100" />
           <Property Name="EmployeeEmail" Type="nvarchar" MaxLength="200" />
-          <Property Name="Department" Type="nvarchar" MaxLength="100" />
-          <Property Name="EmployeeManagerName" Type="nvarchar" MaxLength="200" />
-          <Property Name="EmployeeManagerEmail" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityContainer Name="EmployeeModelStoreContainer">
-          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Employee].[EmployeeNo] AS [EmployeeNo], 
-    [Employee].[EmployeeName] AS [EmployeeName], 
-    [Employee].[EmployeeEmail] AS [EmployeeEmail], 
-    [Employee].[Department] AS [Department], 
-    [Employee].[EmployeeManagerName] AS [EmployeeManagerName], 
-    [Employee].[EmployeeManagerEmail] AS [EmployeeManagerEmail]
-    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -42,9 +27,6 @@ warning 6002: The table/view 'Employee.dbo.Employee' does not have a primary key
           <Property Name="EmployeeNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EmployeeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="EmployeeEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Department" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeManagerName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="EmployeeManagerEmail" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="EmployeeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Employee" EntityType="Self.Employee" />
@@ -61,10 +43,7 @@ warning 6002: The table/view 'Employee.dbo.Employee' does not have a primary key
                 <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
                 <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
                 <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
-                <ScalarProperty Name="Department" ColumnName="Department" />
-                <ScalarProperty Name="EmployeeManagerName" ColumnName="EmployeeManagerName" />
-                <ScalarProperty Name="EmployeeManagerEmail" ColumnName="EmployeeManagerEmail" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
         </EntityContainerMapping>

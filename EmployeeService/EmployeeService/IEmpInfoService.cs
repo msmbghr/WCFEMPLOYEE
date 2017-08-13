@@ -18,5 +18,7 @@ namespace EmployeeService
 
         [WebInvoke(Method = "GET", UriTemplate = "/get/{getid}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Wrapped)]
         Employee getemp(string getid);
+
+        void insetemp(string getid);
     }
 }
